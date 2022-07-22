@@ -1,0 +1,5 @@
+import libraray
+
+os
+pillow
+mysqlclient
