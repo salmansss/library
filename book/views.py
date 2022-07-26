@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Book
+from .models import Book, Category
 from .forms import BookCreate
 from django.http import HttpResponse
 
@@ -7,6 +7,12 @@ from django.http import HttpResponse
 def index(request):
     shelf = Book.objects.all()
     return render(request, 'book/library.html', {'shelf': shelf})
+
+def category(request):
+    category = Category.objects.all()
+    return render(request,'book/index.html',{'category': category})
+
+
 
 def upload(request):
     upload = BookCreate()
